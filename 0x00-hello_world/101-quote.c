@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+#include <unistd.h>
+#include <string.h>
 /**
  * main - Entry point
  *
@@ -7,7 +8,9 @@
  */
 int main(void)
 {
-	fprintf(stderr, "and that piece of art is useful\"");
-	fprintf(stderr, " - Dora Korpar, 2015-10-19\n");
+	char txt[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	int len = strlen(txt);
+
+	write(2, txt, len);
 	return (1);
 }
