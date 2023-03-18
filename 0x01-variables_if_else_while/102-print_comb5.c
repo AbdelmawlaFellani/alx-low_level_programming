@@ -6,41 +6,41 @@
  */
 int main(void)
 {
-	int c1 = 48;
-	int c2 = 48;
-	int c3 = 48;
-	int c4 = 48;
+	int a = 48;
+	int b = 48;
+	int c = 48;
+	int d = 48;
 
-	while (c1 <= 57)
+	while (a <= 57)
 	{
-		while (c2 <= 57)
+		while (b <= 57)
 		{
-			c3 = c1;
-			c4 = c2 + 1;
-			while (c3 <= 57)
+			c = a;
+			d = b + 1;
+			while (c <= 57)
 			{
-				while (c4 <= 57)
+				while (d <= 57)
 				{
-					putchar(c1);
-					putchar(c2);
+					putchar(a);
+					putchar(b);
 					putchar(32);
-					putchar(c3);
-					putchar(c4);
-					if ((c1 != 57) || (c2 != 56) || (c3 != 57) || (c4 != 57))
+					putchar(c);
+					putchar(d);
+					if ((a != 57) || (b != 56) || (c != 57) || (d != 57))
 					{
 						putchar(44);
 						putchar(32);
 					}
-					c4++;
+					d++;
 				}
-				c3++;
-				c4 = 48;
+				c++;
+				d = 48;
 			}
-			c2++;
-			c3 = 48;
+			b++;
+			c = 48;
 		}
-		c1++;
-		c2 = 48;
+		a++;
+		b = 48;
 	}
 	putchar('\n');
 	return (0);
