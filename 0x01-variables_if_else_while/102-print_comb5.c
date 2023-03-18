@@ -1,50 +1,48 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
+ *  * main - Entry point
+ *   * Return: Always 0 (Success)
+ *    */
+
 int main(void)
 {
-	int a = 48;
-	int b;
-	int c;
-	int d;
+	int c1 = 48;
+	int c2 = 48;
+	int c3 = 48;
+	int c4 = 48;
 
-	while (a < 58)
+	while (c1 <= 57)
 	{
-		b = 48;
-		while (b < 58)
+		while (c2 <= 57)
 		{
-			c = a;
-			while (c < 58)
+			c3 = c1;
+			c4 = c2 + 1;
+			while (c3 <= 57)
 			{
-				if (a == 48 && b == 48 && c != 48)
-					d = b;
-				else
-					d = b + 1;
-				while (d < 58)
+				while (c4 <= 57)
 				{
-					putchar(a);
-					putchar(b);
-					putchar(32);
-					putchar(c);
-					putchar(d);
-					if (b != 56 || a != 57)
+					putchar(c1);
+					putchar(c2);
+					putchar(' ');
+					putchar(c3);
+					putchar(c4);
+					if ((c1 != 57) || (c2 != 56) || (c3 != 57) || (c4 != 57))
 					{
-						putchar(44);
-						putchar(32);
+						putchar(',');
+						putchar(' ');
 					}
-					else
-						putchar('\n');
-					d++;
+					c4++;
 				}
-				c++;
+				c3++;
+				c4 = 48;
 			}
-			b++;
+			c2++;
+			c3 = 48;
 		}
-		a++;
+		c1++;
+		c2 = 48;
 	}
+	putchar('\n');
 	return (0);
 }
