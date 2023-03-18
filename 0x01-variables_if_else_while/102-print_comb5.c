@@ -19,11 +19,11 @@ int main(void)
 		{
 			c = a;
 			while (c < 58)
-			{	
-				if (b != 48)
-					d = b + 1;
-				else
+			{
+				if (a == 48 && b == 48)
 					d = b;
+				else
+					d = b + 1;
 				while (d < 58)
 				{
 					putchar(a);
