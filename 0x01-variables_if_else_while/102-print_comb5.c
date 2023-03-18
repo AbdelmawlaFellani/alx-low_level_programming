@@ -23,13 +23,13 @@ int main(void)
 				{
 					putchar(c1);
 					putchar(c2);
-					putchar(' ');
+					putchar(32);
 					putchar(c3);
 					putchar(c4);
 					if ((c1 != 57) || (c2 != 56) || (c3 != 57) || (c4 != 57))
 					{
-						putchar(',');
-						putchar(' ');
+						putchar(44);
+						putchar(32);
 					}
 					c4++;
 				}
