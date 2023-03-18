@@ -20,7 +20,7 @@ int main(void)
 			c = a;
 			while (c < 58)
 			{
-				if (a == 48 && b == 48)
+				if (a == 48 && b == 48 && c != 48)
 					d = b;
 				else
 					d = b + 1;
