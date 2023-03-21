@@ -10,8 +10,8 @@
 int print_last_digit(int n)
 {
 	int res;
-	res = n % 10;
 
+	res = n % 10;
 	if (res < 0)
 		res *= -1;
 
