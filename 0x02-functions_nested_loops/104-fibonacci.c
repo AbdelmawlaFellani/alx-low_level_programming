@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	unsigned long int t1 = 0, t2 = 1, n;
+	unsigned long int t1 = 1, t2 = 2, n;
 	int i;
 
 	printf("%ld, %ld, ", t1, t2);
