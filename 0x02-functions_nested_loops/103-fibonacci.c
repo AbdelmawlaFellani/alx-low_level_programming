@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	unsigned long int t1 = 0, t2 = 1, n, sum = 0;
+	int t1 = 0, t2 = 1, n, sum = 0;
 
 	while (n < 4000000)
 	{
@@ -21,6 +21,6 @@ int main(void)
 			sum += n;
 		}
 	}
-	printf("%ld\n", sum);
+	printf("%i\n", sum);
 	return (0);
 }
