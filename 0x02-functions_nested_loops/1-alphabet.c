@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Description : 'printing all alphab'
+ * print_alphabet - printing all alphabets
  *
  * Return: Always 0 (Success)
  */
