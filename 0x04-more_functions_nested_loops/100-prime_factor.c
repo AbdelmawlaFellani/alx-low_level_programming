@@ -42,6 +42,6 @@ int last_factor(long int n)
 
 int main(void)
 {
-	printf("%lu\n", last_factor(612852475143));
+	printf("%d\n", last_factor(612852475143));
 	return (0);
 }
