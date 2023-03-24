@@ -7,24 +7,28 @@
  *
  * Return: the value of the last prime factor of a number
  */
-int last_factor(long int n) {
+int last_factor(long int n)
+{
+	int lastf = 0, i;
 
-    int lastf = 0, i;
-
-    while (n % 2 == 0) {
-        lastf = 2;
-        n = n / 2;
-    }
-    for (i = 3; i*i <= n; i += 2) {
-        while (n % i == 0) {
-            lastf = i;
-            n = n / i;
-        }
-    }
-    if (n > 2) {
-        lastf = n;
-    }
-    return lastf;
+	while (n % 2 == 0)
+	{
+		lastf = 2;
+		n = n / 2;
+	}
+	for (i = 3; i * i <= n; i += 2)
+	{
+		while (n % i == 0)
+		{
+			lastf = i;
+			n = n / i;
+		}
+	}
+	if (n > 2)
+	{
+		lastf = n;
+	}
+	return (lastf);
 }
 
 
@@ -33,12 +37,11 @@ int last_factor(long int n) {
  *
  * Description: a program that prints the highest prime factor of a number
  *
- * Return : Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	printf("%d\n", last_factor(612852475143));
-
-	return (0);	
+	printf("%lu\n", last_factor(612852475143));
+	return (0);
 }
