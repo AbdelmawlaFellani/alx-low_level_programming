@@ -13,7 +13,7 @@ void print_number(int n)
 
 	if (val < 0)
 	{
-		_putchar('-');
+		_putchar(45);
 		val = -n;
 	}
 	if (val / 10)
