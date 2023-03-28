@@ -25,11 +25,15 @@ int _atoi(char *s)
 		res = res * 10 + (*p - '0');
 		p++;
 
-		if (res > 214748364 || (res == 214748364 && *p > '7')) {
-			if (sign == 1) {
-				return 2147483647;
-			} else {
-				return -2147483648;
+		if (res > 214748364 || (res == 214748364 && *p > '7'))
+		{
+			if (sign == 1)
+			{
+				return (2147483647);
+			}
+			else
+			{
+				return (-2147483648);
 			}
 		}
 		while (*p && (*p < '0' || *p > '9'))
