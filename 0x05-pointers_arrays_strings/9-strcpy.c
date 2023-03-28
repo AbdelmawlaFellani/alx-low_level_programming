@@ -3,9 +3,10 @@
 /**
  * _strcpy - copies the string pointed to by src
  *
- * @
+ * @dest: its the string that gonna recive the copy
+ * @src: is the String that gonna get copied
  *
- * Return : void
+ * Return: void
  */
 char *_strcpy(char *dest, char *src)
 {
