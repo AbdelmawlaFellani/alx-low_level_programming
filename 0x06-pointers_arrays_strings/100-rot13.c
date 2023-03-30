@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * rot13 - 
+ * rot13 - encodes a string using rot13.
  *
  * @s: pointer to a string
  *
@@ -19,17 +19,16 @@ char *rot13(char *s)
 		pr = r;
 		while (*pa)
 		{
-			if(*str == *pa)
+			if (*str == *pa)
 			{
 				*str = *pr;
 				break;
-			}	
+			}
 			pa++;
 			pr++;
 		}
 		str++;
 	}
-	
 
 	return (s);
 }
