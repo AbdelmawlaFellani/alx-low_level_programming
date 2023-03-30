@@ -8,7 +8,7 @@
  * Return: returns the Result string after the convert
  */
 char *leet(char *m)
-{	
+{
 	char *str = m, *a = "aeotlAEOTL",  *c = "4307143071";
 	char *pa, *pc;
 
