@@ -13,7 +13,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	char *p1 = n1, *p2 = n2, *pr = r, tmp;
+	char *p1 = n1, *p2 = n2, *pr = r, tmp, *first_non_zero;
 	int carry, sum;
 
 	while (*p1)
@@ -46,5 +46,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (pr - r > size_r - 1)
 		return (0);
-	return (r);
+	first_non_zero = r;
+	while (*first_non_zero == '0' && *(first_non_zero + 1) != '\0')
+		first_non_zero++;
+	return (first_non_zero);
 }
