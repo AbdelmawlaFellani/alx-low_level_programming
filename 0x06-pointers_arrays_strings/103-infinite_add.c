@@ -14,33 +14,30 @@
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	char *p1 = n1, *p2 = n2, *pr = r, tmp;
-	int carry, sum, len1 = 0, len2 = 0;
+	int carry, sum;
 
 	while (*p1)
-	{
-		p1++, len1++;
-	}
+		p1++;
 	while (*p2)
-	{
-		p2++, len2++;
-	}
+		p2++;
 	carry = 0;
 	p1--, p2--;
-	while (len1 > 0 || len2 > 0 || carry > 0 || pr - r < size_r - 1)
+	while (p1 >= n1 || p2 >= n2 || carry > 0 || pr - r < size_r - 1)
 	{
 		sum = carry;
-		if (len1 > 0)
+		if (p1 >= n1)
 		{
-			sum += (*p1 - '0'), p1--, len1--;
+			sum += (*p1 - '0'), p1--;
 		}
-		if (len2 > 0)
+		if (p2 >= n2)
 		{
-			sum += (*p2 - '0'), p2--, len2--;
+			sum += (*p2 - '0'), p2--;
 		}
 		*pr = (sum % 10) + '0', pr++;
 		carry = sum / 10;
 	}
-	*pr = '\0', p1 = r;
+	*pr = '\0';
+	p1 = r;
 	p2 = pr - 1;
 	while (p1 < p2)
 	{
