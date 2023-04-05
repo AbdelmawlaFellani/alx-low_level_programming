@@ -8,7 +8,7 @@
  *
  * Return: the Square root of @n
  */
-int sqrt_h(int n, int i)
+int long sqrt_h(int n, int i)
 {
 	if (i * i == n)
 	{
