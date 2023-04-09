@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /**
- * Main - Entry Point
+ * main -Entry point
  *
  * @argc: argument counter
  * @argv: argument vector
@@ -10,6 +10,6 @@
  */
 int main(int argc, char *argv[])
 {
-	printf("%s\n",argv[0]);
+	printf("%s\n", argv[0]);
 	return (argc);
 }
