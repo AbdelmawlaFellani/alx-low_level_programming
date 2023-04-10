@@ -11,13 +11,15 @@
 int main(int argc, char *argv[])
 {
 	int change[] = {25, 10, 5, 2, 1}, count = 0, k = 0;
-	int amount = atoi(argv[1]);
+	int amount;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	amount = atoi(argv[1]);
+
 	if (amount < 0)
 	{
 		printf("0\n");
