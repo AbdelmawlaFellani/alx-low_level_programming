@@ -8,7 +8,7 @@ int _atoi(char *s);
  * @argc: arguments counter
  * @argv: argument vector
  *
- * return: 0 when Success and 1 when Error
+ * Return: 0 when Success and 1 when Error
  */
 int main(int argc, char *argv[])
 {
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
 	while (k < argc)
 	{
-		if(_atoi(argv[k]) >= 0)
+		if (_atoi(argv[k]) >= 0)
 			sum += _atoi(argv[k]);
 		k++;
 	}
