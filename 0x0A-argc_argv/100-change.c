@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	while(k <= 4 && amount > 0)
+	while (k <= 4 && amount > 0)
 	{
 		if (amount >= change[k])
 		{
@@ -34,6 +34,6 @@ int main(int argc, char *argv[])
 		else
 			k++;
 	}
-	printf("%d\n",count);
+	printf("%d\n", count);
 	return (0);
 }
