@@ -1,6 +1,44 @@
 #include "main.h"
 
 /**
+ * _strlen - returns the length of a given string
+ * @s: the string
+ * Return: the length of given string
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
+ * create_array -  creates an array
+ *
+ * @size: size of the array
+ *
+ * Return: NULL if size = 0 , pointer to array or NULL if fails
+ */
+char *_create_array(unsigned int size)
+{
+        char *arr;
+
+        if (size == 0)
+                return (NULL);
+
+        arr = malloc(sizeof(char) * size);
+        if (!arr)
+                return (NULL);
+        return (arr);
+}
+
+/**
  * _strdup - that returns a pointer to a newly allocated space in memory,
  * which contains a copy of the string given as a parameter.
  *
@@ -11,20 +49,21 @@
  */
 char *_strdup(char *str)
 {
-	char *s, *ps;
-	int len = 0;
+	char *s,*ps;
 
-	while (str[len] != '\0')
-		len++;
-
-	s = malloc(sizeof(str) * len +1);
-	ps = s;
-	if (!ps || str == NULL)
+	if (str == NULL)
 		return (NULL);
+
+	s = _create_array(_strlen(str) + 1);
+	ps = s;
+	if (!s)
+		return (NULL);
+
 	while (*str != '\0')
 	{
-		*s++ = *str++;
+		*ps++=*str++;
 	}
-	*s = '\0';
-	return (ps);
+	*ps = '\0';
+
+	return (s);
 }
