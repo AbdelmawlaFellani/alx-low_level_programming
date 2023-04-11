@@ -19,7 +19,7 @@ int _strlen(char *s)
 }
 
 /**
- * create_array -  creates an array
+ * _create_array -  creates an array
  *
  * @size: size of the array
  *
@@ -27,15 +27,15 @@ int _strlen(char *s)
  */
 char *_create_array(unsigned int size)
 {
-        char *arr;
+	char *arr;
 
-        if (size == 0)
-                return (NULL);
+	if (size == 0)
+		return (NULL);
 
-        arr = malloc(sizeof(char) * size);
-        if (!arr)
-                return (NULL);
-        return (arr);
+	arr = malloc(sizeof(char) * size);
+	if (!arr)
+		return (NULL);
+	return (arr);
 }
 
 /**
@@ -49,7 +49,7 @@ char *_create_array(unsigned int size)
  */
 char *_strdup(char *str)
 {
-	char *s,*ps;
+	char *s, *ps;
 
 	if (str == NULL)
 		return (NULL);
@@ -61,7 +61,7 @@ char *_strdup(char *str)
 
 	while (*str != '\0')
 	{
-		*ps++=*str++;
+		*ps++ = *str++;
 	}
 	*ps = '\0';
 
