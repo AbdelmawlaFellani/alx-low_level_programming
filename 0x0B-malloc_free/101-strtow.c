@@ -20,7 +20,7 @@ char **strtow(char *str)
 	while (*(str + len))
 	{
 		if (*(str + len) != ' ' && (*(str + len + 1) == ' ' || *(str + len + 1) == '\0'))
-                        wc++;
+			wc++;
 		len++;
 
 	}
@@ -36,14 +36,21 @@ char **strtow(char *str)
 			*(newStr + j) = str[i];
 			j++;
 		}
-		else if (j > 0)
+		else if (i > 0 && *(str + i - 1) != ' ')
 		{
-			*(newStr + i) = '\n';
+			*(newStr + j) = '\n';
 			j++;
 		}
 		i++;
 	}
-	*(newStr + j) = '\0';
+	if (*(newStr + j - 1) == '\n')
+	{
+		*(newStr + j - 1) = '\0';
+	}
+	else
+	{
+		*(newStr + j) = '\0';
+	}
 
 	words = malloc(sizeof(char *));
 	if (words == NULL)
