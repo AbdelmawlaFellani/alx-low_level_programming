@@ -9,7 +9,8 @@
 int _strlen(char *s)
 {
 	int i;
-
+	if (s == NULL)
+		return (0);
 	i = 0;
 	while (s[i])
 	{
@@ -50,7 +51,8 @@ char *str_concat(char *s1, char *s2)
 	char *str_res;
 	int i = 0, j = 0;
 	str_res = _create_array(_strlen(s1) + _strlen(s2) + 1);
-
+	if (!str_res)
+		return (NULL);
 	while (i < _strlen(s1))
 	{
 		*(str_res + i) = *(s1 + i);
