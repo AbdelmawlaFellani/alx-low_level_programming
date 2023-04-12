@@ -84,8 +84,8 @@ int count_words(char *str)
 char **strtow(char *str)
 {
 	int wc, wl, i = 0, j = 0;
-	int start,end;
-	char *word,**words;
+	int start, end;
+	char *word, **words;
 
 	if (str == NULL || _strlen(str) == 0 || count_words(str) == 0)
 		return (NULL);
