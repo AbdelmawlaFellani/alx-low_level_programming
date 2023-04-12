@@ -63,7 +63,7 @@ char **strtow(char *str)
 		return (NULL);
 	wc = count_words(str);
 	len = total_length(str);
-	newStr = malloc(sizeof(char) * (len + wc));
+	newStr = malloc(sizeof(char) * len);
 	if (newStr == NULL)
 		return (NULL);
 	while (*(str + i) != '\0')
