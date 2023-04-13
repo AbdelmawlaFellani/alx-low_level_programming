@@ -32,7 +32,6 @@ void *_memset(void *s, int c, unsigned int n)
 int *array_range(int min, int max)
 {
 	int *p;
-	
 
 	if (min > max)
 		return (NULL);
