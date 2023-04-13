@@ -38,7 +38,7 @@ char *_create_array(unsigned int size)
 	return (arr);
 }
 /**
- * string_nconcat - 
+ * string_nconcat - concatenates two strings.
  *
  * @s1: first String
  * @s2: second String
@@ -62,11 +62,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	while (i < l1)
-	{	
+	{
 		res_str[i] = s1[i];
 		i++;
 	}
-	
+
 	while (j < n)
 	{
 		res_str[i] = s2[j];
@@ -74,7 +74,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		j++;
 	}
 
-	res_str[i] = '\0'; 
+	res_str[i] = '\0';
 	return (res_str);
 
 }
