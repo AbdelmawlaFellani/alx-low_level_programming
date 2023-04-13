@@ -17,7 +17,7 @@ void *_memset(void *s, int c, unsigned int n)
 	while (len < n)
 	{
 		*ps++ = c++;
-		len += 4;
+		len += sizeof(int);
 	}
 	return (s);
 }
