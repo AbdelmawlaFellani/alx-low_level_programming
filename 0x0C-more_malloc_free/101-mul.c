@@ -8,7 +8,9 @@
  *
  * Return: multi of two numbers from agruments
  */
-int main(int argc,char *argv[])
+int main(int argc, char *argv[])
 {
+	(void)argc;
+	(void)argv;
 	return (0);
 }
