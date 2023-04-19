@@ -12,6 +12,7 @@
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int index, i;
+
 	if (!array || !cmp)
 		return (-1);
 
@@ -26,5 +27,5 @@ int int_index(int *array, int size, int (*cmp)(int))
 			return (index);
 		}
 	}
-	return (-1); 
+	return (-1);
 }
