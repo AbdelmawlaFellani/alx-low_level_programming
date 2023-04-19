@@ -4,7 +4,7 @@
  * print_name - prints a name
  *
  * @name: string input
- * @f: callback function 
+ * @f: callback function
  *
  * Return: void
  */
