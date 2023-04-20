@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int n1, n2;
+	int n1, n2, res;
 	char op;
 	int (*fp)(int, int);
 
@@ -24,11 +24,7 @@ int main(int argc, char *argv[])
 	n2 = atoi(argv[3]);
 	fp = get_op_func(argv[2]);
 
-	if (fp)
-	{
-		printf("%d\n", get_op_func(argv[2])(n1, n2));
-	}
-	else
+	if (!fp)
 	{
 		printf("Error\n");
 		exit(99);
@@ -41,5 +37,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
+
+	res = fp(n1, n2);
+
+	printf("%d\n", res);
 	return (0);
 }
