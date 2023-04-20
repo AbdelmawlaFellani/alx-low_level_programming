@@ -1,7 +1,7 @@
 #include "3-calc.h"
 
 /**
- * main - Entry point 
+ * main - Entry point
  *
  * @argc: argument counter
  * @argv: argument vector
@@ -41,6 +41,5 @@ int main(int argc, char *argv[])
 	res = fp(n1, n2);
 
 	printf("%d\n", res);
-	
 	return (0);
 }
