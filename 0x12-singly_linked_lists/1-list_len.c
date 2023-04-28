@@ -4,7 +4,7 @@
 /**
  * list_len - returns the number of elements in a linked list_t list.
  *
- * @h: singely linked list Input
+ * @h: pointer to the head node of the linked list
  *
  * Return: number of elements in a linked list
  */
