@@ -3,6 +3,14 @@
 #include <string.h>
 #include <stdio.h>
 
+/**
+ * add_node -  adds a new node at the beginning of a list_t list.
+ *
+ * @head: pointer to the first node of the linked list
+ * @str: is the String input to get duplicated inside the node
+ *
+ * Return: the address of the first node
+ */
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
@@ -11,22 +19,18 @@ list_t *add_node(list_t **head, const char *str)
 	if (new == NULL)
 	{
 		printf("Error\n");
-                return (NULL);
+		return (NULL);
 	}
 	new->str = strdup(str);
 	new->len = strlen(str);
 	new->next = NULL;
-	
+
 	if (*head == NULL)
 		*head = new;
 	else
 	{
-		list_t *curr = *head;
-		while (curr->next != NULL)
-		{
-			curr = curr->next;
-		}
-		curr->next = new;
+		new->next = *head;
+		*head = new;
 	}
 	return (new);
 }
