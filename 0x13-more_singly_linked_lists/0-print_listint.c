@@ -3,7 +3,7 @@
 /**
  * print_listint - prints all the elements of a listint_t list.
  *
- * @h: pointer to the head of the list
+ * @h: pointer to the head of the linked list
  *
  * Return: the number of nodes
  */
@@ -17,6 +17,5 @@ size_t print_listint(const listint_t *h)
 		h = h->next;
 		countNode++;
 	}
-
 	return (countNode);
 }
