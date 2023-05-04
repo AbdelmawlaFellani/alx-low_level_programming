@@ -11,7 +11,7 @@
  */
 int main(int ac, char *av[])
 {
-	int bytes, i;
+	int bytes, i = 0;
 	char *arr;
 	/* Checks the case if the number of arguments is correct or not */
 	if (ac != 2)
