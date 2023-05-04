@@ -19,7 +19,7 @@ int main(int ac, char *av[])
 		printf("Error\n");
 		exit(1);
 	}
-	
+
 	bytes = atoi(av[1]); /* Args are strings we convert them to integers */
 	/* Checks if the number of bytes is negative */
 	if (bytes < 0)
@@ -33,10 +33,10 @@ int main(int ac, char *av[])
 	{
 		if (i == (bytes - 1))
 		{
-			printf("%02hhx\n",arr[i]);
+			printf("%02hhx\n", arr[i]);
 			break;
 		}
-		printf("%02hhx\n",arr[i]);
+		printf("%02hhx\n", arr[i]);
 		i++;
 	}
 	return (0);
