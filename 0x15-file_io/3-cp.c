@@ -2,6 +2,13 @@
 char *init_buffer(char file);
 void close_fd(int fd);
 
+/**
+ * init_buffer - Handles creating the buffer and cases where buffer is null
+ *
+ * @file: The name of the file buffer is storing chars for.
+ *
+ * Return: pointer to the newly-allocated buffer.
+ */
 char *init_buffer(char file)
 {
 	char *buffer;
@@ -10,12 +17,18 @@ char *init_buffer(char file)
 
 	if (!buffer)
 	{
-		dprintf(STDERR_FILENO,"Error: Can't write to %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
 	return (buffer);
 }
-
+/**
+ * close_fd - handles closing file discriptors
+ *
+ * @fd: the file to be closed
+ *
+ * Return: void
+ */
 void close_fd(int fd)
 {
 	int check;
@@ -50,6 +63,7 @@ int main(int ac, char *av[])
 	buff = init_buffer(av[2]);
 	fd_src = open(av[1], O_RDONLY);
 	r = read(fd_src, buff, BUFSIZE);
+	w = write(fd_dest, buff, r);
 	fd_dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (fd_src == -1)
@@ -59,7 +73,7 @@ int main(int ac, char *av[])
 	}
 	while (r > 0)
 	{
-		if (fd_dest == -1 || w = write(fd_dest, buff, r) != r)
+		if (fd_dest == -1 || w != r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(fd_src);
@@ -70,7 +84,9 @@ int main(int ac, char *av[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
-	}	
+	}
+	free(buff);
+
 	close_fd(fd_src);
 	close_fd(fd_dest);
 
