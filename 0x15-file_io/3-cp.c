@@ -67,7 +67,6 @@ int main(int ac, char *av[])
 	fd_src = open(av[1], O_RDONLY);
 	r = read(fd_src, buff, BUFSIZE);
 	fd_dest = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	w = write(fd_dest, buff, r);
 
 	if (fd_src == -1)
 	{
@@ -76,12 +75,15 @@ int main(int ac, char *av[])
 	}
 	while (r > 0)
 	{
+		w = write(fd_dest, buff, r);
+
 		if (fd_dest == -1 || w != r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			close(fd_src);
 			exit(99);
 		}
+		r = read(fd_src, buff, BUFSIZE);
 	}
 	if (r < 0)
 	{
