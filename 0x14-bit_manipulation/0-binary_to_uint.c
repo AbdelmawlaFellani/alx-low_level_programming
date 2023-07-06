@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * binary_to_uint - Converts a binary number to an unsigned int
- * 
+ *
  * @b: pointer to the string of 0 and 1 chars
  *
  * Return: the Converted number
@@ -25,7 +25,7 @@ unsigned int binary_to_uint(const char *b)
 			number += *b - '0';
 			b++;
 		}
-		else 
+		else
 		{
 			return (0);
 		}
