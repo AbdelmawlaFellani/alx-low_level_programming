@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -7,18 +6,19 @@
  *
  * Return: Always 0.
  */
-int main(int ac, char **av)
+int main(void)
 {
-	ssize_t n;
+	unsigned int n;
 
-	if (ac != 2)
-	{
-		dprintf(2, "Usage: %s filename\n", av[0]);
-		exit(1);
-	}
-	n = read_textfile(av[1], 114);
-	printf("\n(printed chars: %li)\n", n);
-	n = read_textfile(av[1], 1024);
-	printf("\n(printed chars: %li)\n", n);
+	n = binary_to_uint("1");
+	printf("%u\n", n);
+	n = binary_to_uint("101");
+	printf("%u\n", n);
+	n = binary_to_uint("1e01");
+	printf("%u\n", n);
+	n = binary_to_uint("1100010");
+	printf("%u\n", n);
+	n = binary_to_uint("0000000000000000000110010010");
+	printf("%u\n", n);
 	return (0);
 }
