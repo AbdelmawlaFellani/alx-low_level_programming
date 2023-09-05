@@ -93,11 +93,11 @@ void print_class(unsigned char *p)
  *
  * @p: A pointer to an array containing the ELF class.
  */
-void print_data(unsigned char *e_ident)
+void print_data(unsigned char *p)
 {
 	printf("  Data:                              ");
 
-	switch (e_ident[EI_DATA])
+	switch (p[EI_DATA])
 	{
 		case ELFDATANONE:
 			printf("none\n");
@@ -109,7 +109,7 @@ void print_data(unsigned char *e_ident)
 			printf("2's complement, big endian\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+			printf("<unknown: %x>\n", p[EI_CLASS]);
 	}
 }
 
