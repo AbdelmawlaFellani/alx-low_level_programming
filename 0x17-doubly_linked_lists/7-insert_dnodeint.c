@@ -48,22 +48,25 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		new = add_dnodeint(h, n);
 	}
-	if (idx == dlistint_len(*h) - 1)
+	else if (idx == dlistint_len(*h) - 1)
 	{
 		new = add_dnodeint_end(h, n);
 	}
-	while (curr && index < idx)
+	else
 	{
-		if (index == idx - 1)
+		while (curr && index < idx)
 		{
-			new->prev = curr;
-			new->next = curr->next;
-			if (curr->next)
-				curr->next->prev = new;
-			curr->next = new;
+			if (index == idx - 1)
+			{
+				new->prev = curr;
+				new->next = curr->next;
+				if (curr->next)
+					curr->next->prev = new;
+				curr->next = new;
+			}
+			index++;
+			curr = curr->next;
 		}
-		index++;
-		curr = curr->next;
 	}
 	return (new);
 }
